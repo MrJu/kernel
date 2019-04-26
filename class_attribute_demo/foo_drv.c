@@ -44,7 +44,7 @@ static ssize_t enable_show(struct class *class,
 
 static ssize_t enable_store(struct class *class,
 				struct class_attribute *attr,
-				const char *buf, size_t count)
+			    const char *buf, size_t count)
 {
 	int err, val;
 
