@@ -6,3 +6,4 @@
 4. basic platform driver on Ubuntu 16.04 linux-4.15.0-47-generic
 5. class attribute demo on Ubuntu 16.04 linux-4.15.0-47-generic
 6. hrtimer demo on Ubuntu 16.04 linux-4.15.0-47-generic
+7. hrtimer demo based on platform driver on Ubuntu 16.04 linux-4.15.0-47-generic
