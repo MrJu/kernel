@@ -26,7 +26,7 @@
 #define VERSION STR(VERSION_PREFIX-MAJOR_VERSION.MINOR_VERSION.PATCH_VERSION)
 
 #define BASE_MINOR 0
-#define MINOR_NUM 0
+#define MINOR_NUM 1
 #define CLASS_NAME "foo"
 #define DEVICE_NAME "foo"
 #define DEVS_NANE "foo"
