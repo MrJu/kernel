@@ -107,7 +107,7 @@ static long foo_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 		break;
 
 	case IOC_CMD_TRANS:
-		ret = copy_from_user(&msg, (struct msg __user *)arg, _IOC_SIZE(cmd));
+		ret = copy_from_user(&msg, (struct trans_msg __user *)arg, _IOC_SIZE(cmd));
 		if (ret)
 			return -EFAULT;
 
