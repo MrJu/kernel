@@ -75,9 +75,9 @@ static long foo_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 		return -ENOTTY;
 
 	if (_IOC_DIR(cmd) & _IOC_READ)
-		ret= !access_ok(VERIFY_WRITE, (void __user *)arg, _IOC_SIZE(cmd));
+		ret = !access_ok(VERIFY_WRITE, (void __user *)arg, _IOC_SIZE(cmd));
 	else if (_IOC_DIR(cmd) & _IOC_WRITE)
-		ret= !access_ok(VERIFY_READ, (void __user *)arg, _IOC_SIZE(cmd));
+		ret = !access_ok(VERIFY_READ, (void __user *)arg, _IOC_SIZE(cmd));
 
 	if (ret)
 		return -EFAULT;
