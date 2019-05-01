@@ -13,3 +13,4 @@
 11. seq file single char device on Ubuntu 16.04 linux-4.15.0-47-generic
 12. avoid global variable demo on Ubuntu 16.04 linux-4.15.0-47-generic
 13. kernel timer demo on Ubuntu 16.04 linux-4.15.0-47-generic
+14. kobject demo on Ubuntu 16.04 linux-4.15.0-47-generic
