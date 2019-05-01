@@ -93,7 +93,7 @@ err_create_foo_kobj:
 static int foo_remove(struct platform_device *pdev)
 {
 	struct kobject *foo_kobj = platform_get_drvdata(pdev);
-    sysfs_remove_group(foo_kobj, &foo_attr_group);
+	sysfs_remove_group(foo_kobj, &foo_attr_group);
 	kobject_put(foo_kobj);
 	return 0;
 }
