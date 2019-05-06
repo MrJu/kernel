@@ -16,3 +16,5 @@
 14. kobject demo on Ubuntu 16.04 linux-4.15.0-47-generic
 15. kset demo on Ubuntu 16.04 linux-4.15.0-47-generic
 16. kset and kobject on Ubuntu 16.04 linux-4.15.0-47-generic
+17. simple devm demo on Ubuntu 16.04 linux-4.15.0-47-generic
+
