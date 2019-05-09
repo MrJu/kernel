@@ -77,6 +77,7 @@ static int foo_probe(struct platform_device *pdev)
 static int foo_remove(struct platform_device *pdev)
 {
 	struct task_info *task_info = platform_get_drvdata(pdev);
+
 	kthread_stop(task_info->task);
 	devm_kfree(&pdev->dev, task_info);
 
