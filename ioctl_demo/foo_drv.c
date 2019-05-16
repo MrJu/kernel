@@ -82,7 +82,7 @@ static long foo_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 	if (ret)
 		return -EFAULT;
 
-	switch(cmd) {
+	switch (cmd) {
 	case IOC_CMD_NONE:
 		printk("%s(): %s\n", __func__, "IOC_CMD_NONE");
 
