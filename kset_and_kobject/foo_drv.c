@@ -108,7 +108,7 @@ static int foo_probe(struct platform_device *pdev)
 	if(ret)
 		goto err_sysfs_create_group;
 
-	platform_set_drvdata(pdev, &foo->kobj);
+	platform_set_drvdata(pdev, foo);
 
 	return 0;
 
