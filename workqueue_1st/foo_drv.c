@@ -38,8 +38,8 @@ struct foo_work{
 
 static void foo_work_callback(struct work_struct *work)
 {
-	printk("%s ,cpu id = %d,taskname = %s\n",
-			__func__,raw_smp_processor_id(),current->comm);
+	printk("%s, cpu id = %d, taskname = %s\n",
+			__func__, raw_smp_processor_id(), current->comm);
 	msleep(INTERVAL_IN_MSEC);
 }
 
