@@ -29,13 +29,13 @@
 static int foo;
 
 static ssize_t attr_show(struct kobject *kobj,
-				struct kobj_attribute *attr, char *buf)
+		struct kobj_attribute *attr, char *buf)
 {
 	return sprintf(buf, "%d\n", foo);
 }
 
 static ssize_t attr_store(struct kobject *kobj,
-				struct kobj_attribute *attr, const char *buf, size_t count)
+		struct kobj_attribute *attr, const char *buf, size_t count)
 {
 	int ret;
 
