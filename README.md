@@ -22,3 +22,4 @@
 20. workqueue test 1st on Ubuntu 16.04 linux-4.15.0-47-generic
 21. basic i2c device driver on Ubuntu 16.04 linux-4.15.0-47-generic
 22. basic i2c device driver 2nd on Ubuntu 16.04 linux-4.15.0-47-generic
+23. basic i2c device driver 3rd on Ubuntu 16.04 linux-4.15.0-47-generic
