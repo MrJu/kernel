@@ -37,7 +37,7 @@ struct foo_device {
 	dev_t devno;
 	struct cdev cdev;
 	struct class *class;
-	struct device *device;
+	struct device *dev;
 	struct timer_list timer;
 	unsigned int callback_count;
 };
@@ -101,9 +101,9 @@ static int foo_probe(struct platform_device *pdev)
 		goto err_cdev_add;
 	}
 
-	foo->device = device_create(foo->class, NULL, foo->devno, NULL, DEVICE_NAME);
-	if (IS_ERR(foo->device)) {
-		ret = PTR_ERR(foo->device);
+	foo->dev = device_create(foo->class, &pdev->dev, foo->devno, NULL, DEVICE_NAME);
+	if (IS_ERR(foo->dev)) {
+		ret = PTR_ERR(foo->dev);
 		goto err_device_create;
 	}
 
