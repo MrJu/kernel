@@ -44,7 +44,7 @@ struct foo_device {
 	dev_t devno;
 	struct cdev cdev;
 	struct class class;
-	struct device *device;
+	struct device *dev;
 	unsigned int dummy;
 };
 
@@ -195,10 +195,10 @@ static int foo_probe(struct i2c_client *client,
 	if (ret)
 		goto err_cdev_add;
 
-	foo->device = device_create(&foo->class, NULL,
+	foo->dev = device_create(&foo->class, &client->dev,
 			foo->devno, NULL, DEVICE_NAME);
-	if (IS_ERR(foo->device)) {
-		ret = PTR_ERR(foo->device);
+	if (IS_ERR(foo->dev)) {
+		ret = PTR_ERR(foo->dev);
 		goto err_device_create;
 	}
 
