@@ -15,9 +15,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <stdlib.h>
 #include <unistd.h>
-#include <sys/ioctl.h>
 #include <linux/input.h>
 
 #define INPUT_FILE "/dev/input/event7"
