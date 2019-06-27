@@ -26,3 +26,4 @@
 24. atomic demo on Ubuntu 16.04 linux-4.15.0-47-generic
 25. simulative input device driver on Ubuntu 16.04 linux-4.15.0-47-generic
 26. class attribute settings on Ubuntu 16.04 linux-4.15.0-47-generic
+27. kernel linked list on Ubuntu 16.04 linux-4.15.0-47-generic
