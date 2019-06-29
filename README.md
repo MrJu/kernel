@@ -27,3 +27,4 @@
 25. simulative input device driver on Ubuntu 16.04 linux-4.15.0-47-generic
 26. class attribute settings on Ubuntu 16.04 linux-4.15.0-47-generic
 27. kernel linked list on Ubuntu 16.04 linux-4.15.0-47-generic
+28. basic spi driver on Raspbian 6.3.0-18 linux-4.19.37-v7+
