@@ -1,0 +1,20 @@
+diff --git a/arch/arm/boot/dts/bcm2710-rpi-3-b.dts b/arch/arm/boot/dts/bcm2710-rpi-3-b.dts
+index 598c0104f..6f2caacc0 100644
+--- a/arch/arm/boot/dts/bcm2710-rpi-3-b.dts
++++ b/arch/arm/boot/dts/bcm2710-rpi-3-b.dts
+@@ -121,6 +121,7 @@
+ 	pinctrl-0 = <&spi0_pins &spi0_cs_pins>;
+ 	cs-gpios = <&gpio 8 1>, <&gpio 7 1>;
+ 
++#if 0
+ 	spidev0: spidev@0{
+ 		compatible = "spidev";
+ 		reg = <0>;	/* CE0 */
+@@ -136,6 +137,7 @@
+ 		#size-cells = <0>;
+ 		spi-max-frequency = <125000000>;
+ 	};
++#endif
+ };
+ 
+ &i2c0 {
