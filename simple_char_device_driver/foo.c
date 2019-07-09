@@ -13,7 +13,9 @@
 
 #include <linux/module.h>
 #include <linux/cdev.h>
+#include <linux/fs.h>
 #include <linux/slab.h>
+#include <linux/device.h>
 
 #define STR(x) _STR(x)
 #define _STR(x) #x
