@@ -31,3 +31,4 @@
 29. resolve device tree on Raspbian 6.3.0-18 linux-4.19.37-v7+
 30. ringbuffer on Raspbian 6.3.0-18 linux-4.19.37-v7+
 31. interrupt on Raspbian 6.3.0-18 linux-4.19.37-v7+
+32. shared interrupt on Raspbian 6.3.0-18 linux-4.19.37-v7+
