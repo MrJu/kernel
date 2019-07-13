@@ -64,7 +64,6 @@ static void timer_callback(struct timer_list *t)
 	} else {
 		assert("button up");
 	}
-
 }
 
 static irqreturn_t irq_handler(int irq, void *dev)
@@ -98,7 +97,7 @@ int foo_probe(struct platform_device *pdev)
 	foo->irq_info.gpio = gpio;
 
 	ret = devm_gpio_request_one(&pdev->dev, foo->irq_info.gpio,
-			GPIOF_DIR_IN | GPIOF_INIT_LOW, "artech,led");
+			GPIOF_DIR_IN | GPIOF_INIT_LOW, foo->name);
 	if (ret < 0)
 		return ret;
 
@@ -154,7 +153,6 @@ foo {
 	label = "artech,foo";
 	interrupt-gpios = <&gpio 21 GPIO_ACTIVE_HIGH>;
 };
-
 */
 
 static const struct of_device_id foo_of_match[] = {
