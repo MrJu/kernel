@@ -23,10 +23,10 @@ enum {
 
 struct ringbuffer {
 	char *buf;
-	unsigned int rd;
-	unsigned int wr;
-	unsigned int count;
-	unsigned int size;
+	size_t rd;
+	size_t wr;
+	size_t count;
+	size_t size;
 };
 
 struct ringbuffer *ringbuffer_create(size_t bytes, gfp_t flags);
