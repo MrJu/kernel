@@ -33,3 +33,4 @@
 31. interrupt on Raspbian 6.3.0-18 linux-4.19.37-v7+
 32. shared interrupt on Raspbian 6.3.0-18 linux-4.19.37-v7+
 33. gpio and interrupt on Raspbian 6.3.0-18 linux-4.19.37-v7+
+33. gpio on Raspbian 6.3.0-18 linux-4.19.37-v7+
