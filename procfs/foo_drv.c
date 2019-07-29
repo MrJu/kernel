@@ -91,7 +91,9 @@ static int foo_probe(struct platform_device *pdev)
 	if (!parent)
 		return -ENOMEM;
 
-	foo = proc_create(ENTRY_NAME, S_IRUSR | S_IRGRP | S_IROTH, parent, &foo_proc_fops);
+	foo = proc_create(ENTRY_NAME,
+			S_IRUSR | S_IRGRP | S_IROTH,
+			parent, &foo_proc_fops);
 	if (!foo) {
 		remove_proc_entry(PARENT_ENTRY_NAME, NULL);
 		return -ENOMEM;
