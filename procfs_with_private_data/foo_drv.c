@@ -50,7 +50,7 @@ static ssize_t foo_proc_write(struct file *filp, const char __user *buf,
 {
 	int err, val;
 	unsigned int *enable = PDE_DATA(file_inode(filp));
-	char *temp = kzalloc((size + 1), GFP_KERNEL);
+	char *temp = kzalloc(size, GFP_KERNEL);
 	if (!temp)
 		return -ENOMEM;
 
