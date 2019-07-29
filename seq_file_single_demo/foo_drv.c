@@ -51,7 +51,9 @@ static int foo_probe(struct platform_device *pdev)
 
 	printk("%s(): %d\n", __func__, __LINE__);
 
-	foo = proc_create(ENTRY_NAME, S_IRUSR | S_IRGRP | S_IROTH, NULL, &foo_proc_fops);
+	foo = proc_create(ENTRY_NAME,
+			S_IRUSR | S_IRGRP | S_IROTH,
+			NULL, &foo_proc_fops);
 	if (!foo)
 		return -ENOMEM;
 
