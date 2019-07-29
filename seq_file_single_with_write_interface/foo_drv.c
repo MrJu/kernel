@@ -45,7 +45,7 @@ static ssize_t foo_proc_write(struct file *filp, const char __user *buf,
 			size_t size, loff_t *offset)
 {
 	int err, val;
-	char *temp = kzalloc((size + 1), GFP_KERNEL);
+	char *temp = kzalloc(size, GFP_KERNEL);
 	if (!temp)
 		return -ENOMEM;
 
