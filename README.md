@@ -40,3 +40,4 @@
 38. exec user-space cmd on Raspbian 6.3.0-18 linux-4.19.37-v7+
 39. file path from struct file on Raspbian 6.3.0-18 linux-4.19.37-v7+
 40. procfs demo on Raspbian 6.3.0-18 linux-4.19.37-v7+
+41. procfs with private data on Raspbian 6.3.0-18 linux-4.19.37-v7+
