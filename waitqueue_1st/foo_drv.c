@@ -50,13 +50,18 @@ static int task_func(void *data)
 	init_waitqueue_entry(&task_info->wait, current);
 	add_wait_queue(&task_info->wait_head, &task_info->wait);
 
-	while (!kthread_should_stop()) {
+	while (1) {
 		set_current_state(TASK_INTERRUPTIBLE);
 		schedule();
+
+		if (kthread_should_stop())
+			break;
 
 		printk("%s(): name is %s, id is %d\n",
 				__func__, task_info->name, task_info->id);
 	}
+
+	remove_wait_queue(&task_info->wait_head, &task_info->wait);
 
 	return 0;
 }
@@ -122,9 +127,9 @@ static int foo_remove(struct platform_device *pdev)
 {
 	struct task_info *task_info = platform_get_drvdata(pdev);
 
-	kthread_stop(task_info->task);
 	remove_proc_entry("trigger", task_info->proc_dir);
 	remove_proc_entry("waitqueue", NULL);
+	kthread_stop(task_info->task);
 	devm_kfree(&pdev->dev, task_info);
 
 	return 0;
