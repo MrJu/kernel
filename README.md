@@ -44,3 +44,4 @@
 42. procfs with private data 2nd on Raspbian 6.3.0-18 linux-4.19.37-v7+
 43. waitqueue 1st on Raspbian 6.3.0-18 linux-4.19.37-v7+
 44. waitqueue 2nd on Raspbian 6.3.0-18 linux-4.19.37-v7+
+45. basic platform driver 2nd on Raspbian 6.3.0-18 linux-4.19.37-v7+
