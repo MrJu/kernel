@@ -80,6 +80,11 @@ int foo_probe(struct platform_device *pdev)
 
 	foo->irq_info.gpio = gpio;
 
+	ret = devm_gpio_request_one(&pdev->dev, foo->irq_info.gpio,
+			GPIOF_DIR_IN | GPIOF_INIT_LOW, foo->name);
+	if (ret < 0)
+		return ret;
+
 	irq  = gpio_to_irq(foo->irq_info.gpio);
 	if (irq < 0)
 		return irq;
