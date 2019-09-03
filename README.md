@@ -46,3 +46,4 @@
 44. waitqueue 2nd on Raspbian 6.3.0-18 linux-4.19.37-v7+
 45. basic platform driver 2nd on Raspbian 6.3.0-18 linux-4.19.37-v7+
 46. show interval on Raspbian 6.3.0-18 linux-4.19.37-v7+
+47. spinlock on Raspbian 6.3.0-18 linux-4.19.23-v7+

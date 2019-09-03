@@ -1,0 +1,29 @@
+diff --git a/arch/arm/boot/dts/artech.dts b/arch/arm/boot/dts/artech.dts
+new file mode 100644
+index 000000000..a7b4d87f9
+--- /dev/null
++++ b/arch/arm/boot/dts/artech.dts
+@@ -0,0 +1,11 @@
++/*
++ * artech dts for raspberry pi 3 b model
++ */
++
++/ {
++	foo {
++		compatible = "artech,foo";
++		label = "artech,foo";
++		interrupt-gpios = <&gpio 21 GPIO_ACTIVE_HIGH>;
++	};
++};
+diff --git a/arch/arm/boot/dts/bcm2710-rpi-3-b.dts b/arch/arm/boot/dts/bcm2710-rpi-3-b.dts
+index d9d9505c6..598c0104f 100644
+--- a/arch/arm/boot/dts/bcm2710-rpi-3-b.dts
++++ b/arch/arm/boot/dts/bcm2710-rpi-3-b.dts
+@@ -3,6 +3,7 @@
+ #include "bcm2710.dtsi"
+ #include "bcm283x-rpi-smsc9514.dtsi"
+ #include "bcm283x-rpi-csi1-2lane.dtsi"
++#include "artech.dts"
+ 
+ / {
+ 	compatible = "raspberrypi,3-model-b", "brcm,bcm2837";
