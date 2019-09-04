@@ -26,13 +26,11 @@
 
 static int __init foo_init(void)
 {
-	unsigned long rand[16];
 	int i;
 
 	for (i = 0; i < 16; i++) {
-		get_random_bytes(&rand[i], sizeof(unsigned long));
-		printk("%s %s %d %ld\n",
-			__FILE__, __func__, __LINE__, rand[i]);
+		printk("%s %s %d %d\n",
+			__FILE__, __func__, __LINE__, get_random_int());
 	}
 
 	return 0;
