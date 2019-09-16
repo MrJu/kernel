@@ -48,3 +48,4 @@
 46. show interval on Raspbian 6.3.0-18 linux-4.19.37-v7+
 47. spinlock on Raspbian 6.3.0-18 linux-4.19.23-v7+
 48. random on Raspbian 6.3.0-18 linux-4.19.23-v7+
+49. mutex_lock on Raspbian 6.3.0-18 linux-4.19.23-v7+
