@@ -50,3 +50,4 @@
 48. random on Raspbian 6.3.0-18 linux-4.19.23-v7+
 49. mutex_lock on Raspbian 6.3.0-18 linux-4.19.23-v7+
 50. signal in thread on Raspbian 6.3.0-18 linux-4.19.23-v7+
+51. msleep_interruptible on Raspbian 6.3.0-18 linux-4.19.23-v7+
