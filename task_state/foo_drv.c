@@ -27,7 +27,6 @@
 #define VERSION STR(VERSION_PREFIX-MAJOR_VERSION.MINOR_VERSION.PATCH_VERSION)
 
 #define DEVICE_NAME "foo"
-#define KTHREAD_NAME "foo-task"
 
 static char *map[] = {
 	"TASK_RUNNING",
