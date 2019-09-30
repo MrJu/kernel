@@ -56,3 +56,4 @@
 54. sechedule dmeo 2nd on Raspbian 6.3.0-18 linux-4.19.23-v7+
 55. semaphore dmeo on Raspbian 6.3.0-18 linux-4.19.23-v7+
 56. process info on Raspbian 6.3.0-18 linux-4.19.23-v7+
+57. notifier chain on Raspbian 6.3.0-18 linux-4.19.23-v7+
