@@ -54,3 +54,4 @@
 52. task state on Raspbian 6.3.0-18 linux-4.19.23-v7+
 53. sechedule dmeo on Raspbian 6.3.0-18 linux-4.19.23-v7+
 54. sechedule dmeo 2nd on Raspbian 6.3.0-18 linux-4.19.23-v7+
+55. semaphore dmeo on Raspbian 6.3.0-18 linux-4.19.23-v7+
