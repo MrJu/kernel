@@ -21,6 +21,7 @@
 
 #define PAGE_SIZE 4096
 #define NPAGES 32
+#define OFFSET PAGE_SIZE * 0
 #define DEV_PATH "/dev/foo"
 
 int main(int argc, char **argv) {
@@ -35,7 +36,7 @@ int main(int argc, char **argv) {
 
 	do{
 		addr = mmap(NULL, PAGE_SIZE * NPAGES,
-				PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+				PROT_READ | PROT_WRITE, MAP_SHARED, fd, OFFSET);
 		if (addr == MAP_FAILED) {
 			perror("mmap failed");
 			ret = -1;

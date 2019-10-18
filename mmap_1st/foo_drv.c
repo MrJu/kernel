@@ -88,16 +88,16 @@ static ssize_t foo_write(struct file *filp, const char __user *buf,
 static int foo_mmap(struct file *filp, struct vm_area_struct *vma)
 {
 	int ret;
-	unsigned long int size;
+	unsigned long int pfn, size;
 	struct foo_device *foo = filp->private_data;
 
 	size = vma->vm_end - vma->vm_start;
-	if (size > PAGE_SIZE * NPAGES)
+	if ((vma->vm_pgoff << PAGE_SHIFT) + size > PAGE_SIZE * NPAGES)
 		return -EIO;
 
+	pfn = (virt_to_phys(foo->buf) >> PAGE_SHIFT) + vma->vm_pgoff,
 	ret = remap_pfn_range(vma, vma->vm_start,
-			virt_to_phys((void *)foo->buf) >> PAGE_SHIFT,
-			size, vma->vm_page_prot);
+			pfn, size, vma->vm_page_prot);
 	if (ret < 0)
 		return ret;
 
