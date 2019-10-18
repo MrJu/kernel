@@ -19,9 +19,10 @@
 #include <assert.h>
 #include <errno.h>
 
-#define PAGE_SIZE 4096
+#define PAGE_SHIFT 12
 #define NPAGES 32
-#define OFFSET PAGE_SIZE * 0
+#define SIZE NPAGES << PAGE_SHIFT
+#define OFFSET (1 << PAGE_SHIFT) * 0
 #define DEV_PATH "/dev/foo"
 
 int main(int argc, char **argv) {
@@ -35,8 +36,9 @@ int main(int argc, char **argv) {
 	}
 
 	do{
-		addr = mmap(NULL, PAGE_SIZE * NPAGES,
-				PROT_READ | PROT_WRITE, MAP_SHARED, fd, OFFSET);
+		addr = mmap(NULL, SIZE,
+				PROT_READ | PROT_WRITE,
+				MAP_SHARED, fd, OFFSET);
 		if (addr == MAP_FAILED) {
 			perror("mmap failed");
 			ret = -1;
@@ -45,7 +47,7 @@ int main(int argc, char **argv) {
 
 		printf("The original data in memory: %s", addr);
 
-		munmap(addr, PAGE_SIZE * NPAGES);
+		munmap(addr, SIZE);
 	} while(0);
 
 	close(fd);

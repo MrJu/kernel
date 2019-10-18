@@ -40,7 +40,7 @@
 #define DEVS_NANE "foo"
 
 #define READ_INTERVAL_IN_MSEC 1000
-#define NPAGES 32
+#define PAGE_ORDER 5
 
 struct foo_device {
 	dev_t devno;
@@ -55,7 +55,7 @@ static int foo_open(struct inode *inode, struct file *filp)
 	struct foo_device *foo
 		= container_of(inode->i_cdev, struct foo_device, cdev);
 
-	foo->buf = kzalloc(PAGE_SIZE * NPAGES, GFP_KERNEL);
+	foo->buf = kzalloc((1 << PAGE_ORDER) << PAGE_SHIFT, GFP_KERNEL);
 	if (!foo->buf)
 		return -ENOMEM;
 
@@ -92,7 +92,7 @@ static int foo_mmap(struct file *filp, struct vm_area_struct *vma)
 	struct foo_device *foo = filp->private_data;
 
 	size = vma->vm_end - vma->vm_start;
-	if ((vma->vm_pgoff << PAGE_SHIFT) + size > PAGE_SIZE * NPAGES)
+	if (vma->vm_pgoff + (size >> PAGE_SHIFT) > (1 << PAGE_ORDER))
 		return -EIO;
 
 	pfn = (virt_to_phys(foo->buf) >> PAGE_SHIFT) + vma->vm_pgoff,
