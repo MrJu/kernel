@@ -38,13 +38,11 @@ static int __init baz_init(void)
 	for (i = 0; i < 3; i++) {
 		func = kallsyms_lookup_name(name[i]);
 		if (!func) {
-			printk("%s: symbol %s not found\n", __func__, name[0]);
+			printk("%s: symbol %s not found\n", __func__, name[i]);
 			continue;
 		}
 
 		func();
-
-		printk("%s: %s 0x%lx\n", __func__, name[i], func);
 	}
 
 	printk("%s: %s module loaded.\n",
