@@ -1,0 +1,19 @@
+pi@raspberrypi:~$ sudo dmesg -c
+[23039.732603] foo_init: 74 T_symbol_func0 0x7f000068
+[23039.732607] foo_init: 76 T_symbol_func1 0x7f00009c
+[23039.732610] foo_init: 78 t_symbol_func0 0x7f000000
+[23039.732613] foo_init: 80 t_symbol_func1 0x7f000034
+[23039.732616] foo_init: 82 s_symbol_func0 0x7f000104
+[23039.732619] foo_init: 84 s_symbol_func1 0x7f0000d0
+[23039.732623] foo_init: 86 B_symbol_variable0 0x7f002240
+[23039.732626] foo_init: 88 b_symbol_variable 0x7f002244
+[23039.732629] foo_init: 90 s_symbol_variable 0x7f002248
+[23044.392442] bar_init: 74 T_symbol_func2 0x7f008068
+[23044.392461] bar_init: 76 T_symbol_func3 0x7f00809c
+[23044.392476] bar_init: 78 t_symbol_func0 0x7f008000
+[23044.392490] bar_init: 80 t_symbol_func1 0x7f008034
+[23044.392504] bar_init: 82 s_symbol_func0 0x7f008104
+[23044.392518] bar_init: 84 s_symbol_func1 0x7f0080d0
+[23044.392529] bar_init: 86 B_symbol_variable1 0x7f00a240
+[23044.392536] bar_init: 88 b_symbol_variable 0x7f00a244
+[23044.392542] bar_init: 90 s_symbol_variable 0x7f00a248
