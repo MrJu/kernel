@@ -61,3 +61,5 @@
 59. mmap 1st demo on Raspbian 6.3.0-18 linux-4.19.23-v7+
 60. mmap 2nd demo on Raspbian 6.3.0-18 linux-4.19.23-v7+
 61. use external Module.symvers on Raspbian 6.3.0-18 linux-4.19.23-v7+
+62. kernel symbol stuff 1st on Raspbian 6.3.0-18 linux-4.19.23-v7+
+
