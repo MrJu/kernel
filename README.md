@@ -63,4 +63,5 @@
 61. use external Module.symvers on Raspbian 6.3.0-18 linux-4.19.23-v7+
 62. kernel symbol stuff 1st on Raspbian 6.3.0-18 linux-4.19.23-v7+
 63. kernel symbol stuff 2nd on Raspbian 6.3.0-18 linux-4.19.23-v7+
+64. kthread demo 2nd on on Raspbian 6.3.0-18 linux-4.19.23-v7+
 
