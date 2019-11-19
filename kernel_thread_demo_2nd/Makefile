@@ -9,7 +9,6 @@ obj-m += foo_dev.o
 obj-m += foo_drv.o
 
 all:
-	echo $(KERN_DIR) `pwd`
 	$(MAKE) -C $(KERN_DIR) M=`pwd` modules
 
 clean:
