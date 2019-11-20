@@ -66,4 +66,5 @@
 64. kthread demo 2nd on on Raspbian 6.3.0-18 linux-4.19.23-v7+
 65. kthread demo 3rd on on Raspbian 6.3.0-18 linux-4.19.23-v7+
 66. sechedule dmeo 3rd on Raspbian 6.3.0-18 linux-4.19.23-v7+
+66. sechedule dmeo 4th on Raspbian 6.3.0-18 linux-4.19.23-v7+
 
