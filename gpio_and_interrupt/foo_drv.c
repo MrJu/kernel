@@ -128,6 +128,7 @@ int foo_remove(struct platform_device *pdev)
 {
 	struct foo_device *foo = platform_get_drvdata(pdev);
 
+	del_timer_sync(&foo->timer);
 	devm_free_irq(&pdev->dev, foo->irq_info.irq, (void *)foo);
 	devm_gpio_free(&pdev->dev, foo->irq_info.gpio);
 	devm_kfree(&pdev->dev, foo);
