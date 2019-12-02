@@ -74,8 +74,10 @@ static ssize_t setup_store(struct class *class,
 
 		if (strncmp(p, "value=", strlen("value=")) == 0) {
 			err = kstrtouint(p + strlen("value="), 10, &value);
-			if (err)
+			if (err) {
+				kfree(args);
 				return err;
+			}
 
 			value_valid = 1;
 			continue;
