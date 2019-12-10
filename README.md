@@ -69,4 +69,5 @@
 67. sechedule dmeo 4th on Raspbian 6.3.0-18 linux-4.19.23-v7+
 68. ioctl demo 2nd on Raspbian 6.3.0-18 linux-4.19.23-v7+
 69. key input 2nd on Raspbian 6.3.0-18 linux-4.19.23-v7+
+70. dummy register on Raspbian 6.3.0-18 linux-4.19.23-v7+
 
