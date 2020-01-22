@@ -72,4 +72,5 @@
 70. dummy register on Raspbian 6.3.0-18 linux-4.19.23-v7+
 71. kmemleak test on Raspbian 6.3.0-18 linux-4.19.23-v7+
 72. ftrace test on Raspbian 6.3.0-18 linux-4.19.23-v7+
+73. printk_intv on Raspbian 8.3.0-6+rpi1 linux-4.19.97-v7+
 
