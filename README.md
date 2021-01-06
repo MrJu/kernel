@@ -75,3 +75,4 @@
 73. printk_intv on Raspbian 8.3.0-6+rpi1 linux-4.19.97-v7+
 74. kernel time on Ubuntu 16.04 4.15.0-112-generic
 75. dentry from inode on Ubuntu 16.04 4.15.0-126-generic
+76. percpu on qemu aarch64 linux version 5.4.0
