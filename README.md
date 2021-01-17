@@ -77,3 +77,4 @@
 75. dentry from inode on Ubuntu 16.04 4.15.0-126-generic
 76. percpu on qemu aarch64 linux version 5.4.0
 77. kthread_bind on qemu aarch64 linux version 5.4.0
+78. local_irq_disable on qemu aarch64 linux version 5.4.0
