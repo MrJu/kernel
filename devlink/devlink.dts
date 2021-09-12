@@ -1,0 +1,24 @@
+--- old.dts	2021-09-13 03:30:48.564163773 +0800
++++ new.dts	2021-09-12 23:42:42.577401909 +0800
+@@ -389,6 +389,21 @@
+ 		compatible = "fixed-clock";
+ 	};
+ 
++	supplier0: supplier0@0 {
++		#interconnect-cells = <1>;
++		compatible = "artech,supplier0";
++	};
++
++	supplier1: supplier1@1 {
++		#interconnect-cells = <1>;
++		compatible = "artech,supplier1";
++	};
++
++	consumer@0 {
++		compatible = "artech,consumer";
++		interconnects = <&supplier0 0 &supplier1 1>;
++	};
++
+ 	chosen {
+ 		bootargs = "noinitrd root=/dev/nfs nfsroot=10.0.2.2:/home/andrew/Documents/virt/rootfs/busybox,v3 rw init=/linuxrc ip=dhcp console=ttyAMA0";
+ 		stdout-path = "/pl011@9000000";

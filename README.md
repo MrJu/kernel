@@ -81,3 +81,4 @@
 79. gendisk on qemu aarch64 linux version 5.4.0
 80. basic kprobe on qemu aarch64 linux version 5.4.0
 89. ida sample on qemu aarch64 linux version 5.4.0
+90. devlink on qemu aarch64 linux version 5.4.0
