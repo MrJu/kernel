@@ -80,6 +80,6 @@
 78. local_irq_disable on qemu aarch64 linux version 5.4.0
 79. gendisk on qemu aarch64 linux version 5.4.0
 80. basic kprobe on qemu aarch64 linux version 5.4.0
-89. ida sample on qemu aarch64 linux version 5.4.0
-90. devlink on qemu aarch64 linux version 5.4.0
-91. kthread template on qemu aarch64 linux version 5.4.0
+81. ida sample on qemu aarch64 linux version 5.4.0
+82. devlink on qemu aarch64 linux version 5.4.0
+83. kthread template on qemu aarch64 linux version 5.4.0
