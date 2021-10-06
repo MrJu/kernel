@@ -83,3 +83,4 @@
 81. ida sample on qemu aarch64 linux version 5.4.0
 82. devlink on qemu aarch64 linux version 5.4.0
 83. kthread template on qemu aarch64 linux version 5.4.0
+84. stacktrace on qemu aarch64 linux version 5.4.0
