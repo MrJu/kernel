@@ -56,16 +56,17 @@ static int task_func(void *data)
 
 	while (!kthread_should_stop()) {
 		pos = 0;
-		pos += sprintf(task_info->stack,
+		pos += snprintf(task_info->stack + pos, PAGE_SIZE - pos,
 				"%s state:%c cpu:%d pid:%d\n",
 				task->comm,
 				task_state_to_char(task),
 				task_cpu(task),
 				task_pid_nr(task));
 
-		pos += sprintf(task_info->stack + pos, "Call trace:\n");
+		pos += snprintf(task_info->stack + pos,
+				PAGE_SIZE - pos, "Call trace:\n");
 		nr_entries = stack_trace_save(entries, MAX_STACK_TRACE_DEPTH, 0);
-		pos += stack_trace_snprint(task_info->stack + pos, PAGE_SIZE,
+		pos += stack_trace_snprint(task_info->stack + pos, PAGE_SIZE - pos,
 				entries, nr_entries, 0);
 
 		pr_info("%s", task_info->stack);
