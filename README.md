@@ -86,3 +86,4 @@
 84. stacktrace on qemu aarch64 linux version 5.4.0
 85. virt foo device driver on qemu aarch64 linux version 5.4.0
 86. GENMASK sample on qemu aarch64 linux version 5.4.0
+87. set task prio sample on qemu aarch64 linux version 5.4.0
