@@ -87,3 +87,4 @@
 85. virt foo device driver on qemu aarch64 linux version 5.4.0
 86. GENMASK sample on qemu aarch64 linux version 5.4.0
 87. set task prio sample on qemu aarch64 linux version 5.4.0
+88. kmem cache sample on qemu aarch64 linux version 5.4.0
