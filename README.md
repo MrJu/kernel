@@ -88,3 +88,4 @@
 86. GENMASK sample on qemu aarch64 linux version 5.4.0
 87. set task prio sample on qemu aarch64 linux version 5.4.0
 88. kmem cache sample on qemu aarch64 linux version 5.4.0
+89. percpu sample 2nd on qemu aarch64 linux version 5.4.0
