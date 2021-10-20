@@ -17,6 +17,8 @@
 #include <linux/slab.h>
 #include <linux/platform_device.h>
 #include <linux/stacktrace.h>
+#include <linux/version.h>
+#include <linux/sched/signal.h>
 
 #define STR(x) _STR(x)
 #define _STR(x) #x
@@ -41,40 +43,105 @@ struct task_info {
 	char stack[PAGE_SIZE];
 };
 
+static int save_stack_tsk(struct task_struct *task,
+			char *buf, size_t size)
+{
+	int count = 0;
+
+#if defined(CONFIG_STACKTRACE)
+	unsigned long entries[MAX_STACK_TRACE_DEPTH];
+
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 4, 0))
+	unsigned int nr_entries;
+
+	nr_entries = stack_trace_save_tsk(task, entries,
+			ARRAY_SIZE(entries), 0);
+	count += stack_trace_snprint(buf + count,
+			size - count, entries, nr_entries, 0);
+#else
+	struct stack_trace trace = {
+		.entries = entries,
+		.max_entries = ARRAY_SIZE(entries),
+	};
+
+	save_stack_trace_tsk(task, &trace);
+	/* to remove invalid frame 0xffffffffffffffff */
+	if (trace.nr_entries != 0 &&
+			trace.entries[trace.nr_entries-1] == ULONG_MAX)
+		trace.nr_entries--;
+	count += snprint_stack_trace(buf + count, size, &trace, 0);
+#endif
+	if (count > size)
+		count = size;
+#endif /* CONFIG_STACKTRACE */
+
+	return count;
+}
+
+static int save_stack(char *buf, size_t size)
+{
+	int count = 0;
+
+#if defined(CONFIG_STACKTRACE)
+	unsigned long entries[MAX_STACK_TRACE_DEPTH];
+
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 4, 0))
+	unsigned int nr_entries;
+
+	nr_entries = stack_trace_save(entries,
+			ARRAY_SIZE(entries), 0);
+	count += stack_trace_snprint(buf + count,
+			size - count, entries, nr_entries, 0);
+#else
+	struct stack_trace trace = {
+		.entries = entries,
+		.max_entries = ARRAY_SIZE(entries),
+	};
+
+	save_stack_trace(&trace);
+	/* to remove invalid frame 0xffffffffffffffff */
+	if (trace.nr_entries != 0 &&
+			trace.entries[trace.nr_entries-1] == ULONG_MAX)
+		trace.nr_entries--;
+	count += snprint_stack_trace(buf + count, size, &trace, 0);
+#endif
+	if (count > size)
+		count = size;
+#endif /* CONFIG_STACKTRACE */
+
+	return count;
+}
+
 static int task_func(void *data)
 {
 	struct task_info *task_info = data;
-	struct task_struct *task = task_info->task;
-	unsigned long *entries;
-	unsigned int nr_entries;
-	int pos;
-
-	entries = kmalloc_array(MAX_STACK_TRACE_DEPTH,
-                                sizeof(*entries), GFP_KERNEL);
-        if (!entries)
-                return -ENOMEM;
+	int count;
 
 	while (!kthread_should_stop()) {
-		pos = 0;
-		pos += snprintf(task_info->stack + pos, PAGE_SIZE - pos,
-				"%s state:%c cpu:%d pid:%d\n",
-				task->comm,
-				task_state_to_char(task),
-				task_cpu(task),
-				task_pid_nr(task));
+		count = 0;
+		count += snprintf(task_info->stack + count,
+					PAGE_SIZE - count, "\nsave_stack:\n");
+		if (count > PAGE_SIZE)
+			count = 0;
 
-		pos += snprintf(task_info->stack + pos,
-				PAGE_SIZE - pos, "Call trace:\n");
-		nr_entries = stack_trace_save(entries, MAX_STACK_TRACE_DEPTH, 0);
-		pos += stack_trace_snprint(task_info->stack + pos, PAGE_SIZE - pos,
-				entries, nr_entries, 0);
+		count += save_stack(task_info->stack + count,
+					PAGE_SIZE - count);
+		if (count > PAGE_SIZE)
+			count = 0;
+
+		count += snprintf(task_info->stack + count,
+					PAGE_SIZE - count, "\nsave_stack_tsk:\n");
+		if (count > PAGE_SIZE)
+			count = 0;
+
+		count += save_stack_tsk(current, task_info->stack + count,
+					PAGE_SIZE - count);
+		if (count > PAGE_SIZE)
+			count = 0;
 
 		pr_info("%s", task_info->stack);
-
 		msleep(INTERVAL_IN_MSECS);
 	}
-
-        kfree(entries);
 
 	return 0;
 }
