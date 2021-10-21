@@ -43,7 +43,7 @@ struct task_info {
 	char stack[PAGE_SIZE];
 };
 
-static int save_stack_tsk(struct task_struct *task,
+static int save_stack_tsk(struct task_struct *tsk,
 			char *buf, size_t size)
 {
 	int count = 0;
@@ -54,7 +54,7 @@ static int save_stack_tsk(struct task_struct *task,
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 4, 0))
 	unsigned int nr_entries;
 
-	nr_entries = stack_trace_save_tsk(task, entries,
+	nr_entries = stack_trace_save_tsk(tsk, entries,
 			ARRAY_SIZE(entries), 0);
 	count += stack_trace_snprint(buf + count,
 			size - count, entries, nr_entries, 0);
@@ -64,12 +64,13 @@ static int save_stack_tsk(struct task_struct *task,
 		.max_entries = ARRAY_SIZE(entries),
 	};
 
-	save_stack_trace_tsk(task, &trace);
+	save_stack_trace_tsk(tsk, &trace);
 	/* to remove invalid frame 0xffffffffffffffff */
 	if (trace.nr_entries != 0 &&
 			trace.entries[trace.nr_entries-1] == ULONG_MAX)
 		trace.nr_entries--;
-	count += snprint_stack_trace(buf + count, size, &trace, 0);
+	count += snprint_stack_trace(buf + count,
+				size - count, &trace, 0);
 #endif
 	if (count > size)
 		count = size;
@@ -103,7 +104,8 @@ static int save_stack(char *buf, size_t size)
 	if (trace.nr_entries != 0 &&
 			trace.entries[trace.nr_entries-1] == ULONG_MAX)
 		trace.nr_entries--;
-	count += snprint_stack_trace(buf + count, size, &trace, 0);
+	count += snprint_stack_trace(buf + count,
+				size - count, &trace, 0);
 #endif
 	if (count > size)
 		count = size;
