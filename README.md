@@ -92,3 +92,4 @@
 90. lsof in kernel on qemu aarch64 linux version 5.4.0
 91. seq file template on qemu aarch64 linux version 5.4.0
 92. bus_type sample on qemu aarch64 linux version 5.4.0
+93. device_type release test on qemu aarch64 linux version 5.4.0
