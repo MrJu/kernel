@@ -28,7 +28,6 @@
 #define VERSION STR(VERSION_PREFIX-MAJOR_VERSION.MINOR_VERSION.PATCH_VERSION)
 #define DEVICE_NAME "atomic"
 #define NR_MIN_ELEMENTS 8
-#define NR_ELEMENT_ORDER 0
 
 struct dummy {
 	unsigned long int foo;
