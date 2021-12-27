@@ -95,3 +95,4 @@
 93. device_type release test on qemu aarch64 linux version 5.4.0
 94. device model on qemu aarch64 linux version 5.4.0
 95. mempool01 on qemu aarch64 linux version 5.4.0
+96. mempool02 on qemu aarch64 linux version 5.4.0
