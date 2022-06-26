@@ -97,3 +97,4 @@
 95. mempool01 on qemu aarch64 linux version 5.4.0
 96. mempool02 on qemu aarch64 linux version 5.4.0
 97. mempool03 on qemu aarch64 linux version 5.4.0
+98. send signal on qemu aarch64 linux version 5.10.0
