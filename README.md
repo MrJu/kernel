@@ -99,3 +99,4 @@
 97. mempool03 on qemu aarch64 linux version 5.4.0
 98. send signal on qemu aarch64 linux version 5.10.0
 99. find task on qemu aarch64 linux version 5.10.0
+100. trace event simple on qemu aarch64 linux version 5.10.0
