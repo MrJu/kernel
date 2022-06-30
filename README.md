@@ -100,3 +100,4 @@
 98. send signal on qemu aarch64 linux version 5.10.0
 99. find task on qemu aarch64 linux version 5.10.0
 100. trace event simple on qemu aarch64 linux version 5.10.0
+101. trace event full on qemu aarch64 linux version 5.10.0
