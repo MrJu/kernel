@@ -9,21 +9,6 @@
 static int foo_bar_pre(void);
 static void foo_bar_post(void);
 
-#ifndef __TRACE_EVENT_ATOMIC_HELPER_FUNCTIONS
-#define __TRACE_EVENT_ATOMIC_HELPER_FUNCTIONS
-static inline int __length_of(const int *list)
-{
-	int i;
-
-	if (!list)
-		return 0;
-
-	for (i = 0; list[i]; i++)
-		;
-	return i;
-}
-#endif
-
 TRACE_EVENT(foo_bar,
 	TP_PROTO(const char *foo, int bar, const int *lst,
 			const struct cpumask *mask),
