@@ -102,3 +102,4 @@
 100. trace event simple on qemu aarch64 linux version 5.10.0
 101. trace event full on qemu aarch64 linux version 5.10.0
 102. delayed work 2nd on qemu aarch64 linux version 5.10.0
+103. mpidr on qemu aarch64 linux version 5.10.0
